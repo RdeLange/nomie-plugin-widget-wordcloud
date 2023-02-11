@@ -62,7 +62,7 @@
     });
 
     plugin.onWidget(() => {
-      if (plugin.prefs.theme == "light") {
+      if (plugin.prefs.theme == "light" || plugin.prefs.theme == "auto" ) {
         theme = "white"}
       else if (plugin.prefs.theme == "dark") {
         theme = "g100"}  
