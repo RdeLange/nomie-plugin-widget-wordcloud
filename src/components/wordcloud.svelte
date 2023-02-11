@@ -45,9 +45,11 @@
     //Interact.alert("Coming Soon","You will soon be able to directly go to the Connection");
     let item= word.text.toLowerCase();
     if (wctheme == "persons"){
-     //Interact.person(item);}
+     //Interact.person(item);
+    }
      if (wctheme == "journals"){
-     //Interact.journal(item);} 
+     //Interact.journal(item);
+    } 
 
   }
 
