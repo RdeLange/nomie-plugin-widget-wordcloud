@@ -20365,19 +20365,19 @@ var app = (function () {
     			create_component(wordcloud.$$.fragment);
     			set_style(p, "margin-left", "3%");
     			set_style(p, "font-weight", "700");
-    			add_location(p, file$1, 153, 2, 3721);
+    			add_location(p, file$1, 153, 2, 3753);
     			attr_dev(div0, "class", "content svelte-18q08e4");
     			set_style(div0, "background", /*bgcolor*/ ctx[5]);
-    			add_location(div0, file$1, 156, 3, 3908);
+    			add_location(div0, file$1, 156, 3, 3940);
     			attr_dev(div1, "class", "inner-wrapper svelte-18q08e4");
     			set_style(div1, "background", /*bgcolor*/ ctx[5]);
-    			add_location(div1, file$1, 155, 3, 3848);
+    			add_location(div1, file$1, 155, 3, 3880);
     			attr_dev(div2, "class", "outer-wrapper svelte-18q08e4");
     			set_style(div2, "background", /*bgcolor*/ ctx[5]);
-    			add_location(div2, file$1, 154, 1, 3788);
+    			add_location(div2, file$1, 154, 1, 3820);
     			attr_dev(div3, "class", "extra-outer-wrapper svelte-18q08e4");
     			set_style(div3, "background", /*bgcolor*/ ctx[5]);
-    			add_location(div3, file$1, 152, 0, 3656);
+    			add_location(div3, file$1, 152, 0, 3688);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div3, anchor);
@@ -20540,7 +20540,7 @@ var app = (function () {
     	async function initwidget() {
     		await addPersons();
 
-    		if (plugin.prefs.theme == "light") {
+    		if (plugin.prefs.theme == "light" || plugin.prefs.theme == "auto") {
     			$$invalidate(5, bgcolor = "white");
     		} else {
     			$$invalidate(5, bgcolor = "black");
@@ -20823,12 +20823,12 @@ var app = (function () {
     			t5 = space();
     			hr = element("hr");
     			set_style(h1, "text-align", "center");
-    			add_location(h1, file, 220, 8, 6470);
+    			add_location(h1, file, 220, 8, 6503);
     			set_style(h2, "text-align", "center");
-    			add_location(h2, file, 221, 8, 6527);
+    			add_location(h2, file, 221, 8, 6560);
     			set_style(h5, "text-align", "center");
-    			add_location(h5, file, 222, 8, 6583);
-    			add_location(hr, file, 223, 8, 6653);
+    			add_location(h5, file, 222, 8, 6616);
+    			add_location(hr, file, 223, 8, 6686);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, h1, anchor);
@@ -21720,9 +21720,9 @@ var app = (function () {
     			div = element("div");
     			p = element("p");
     			p.textContent = "Loading....";
-    			add_location(p, file, 227, 0, 6700);
+    			add_location(p, file, 227, 0, 6733);
     			attr_dev(div, "class", "startup");
-    			add_location(div, file, 226, 0, 6678);
+    			add_location(div, file, 226, 0, 6711);
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
@@ -21914,7 +21914,7 @@ var app = (function () {
     		});
 
     		plugin.onWidget(() => {
-    			if (plugin.prefs.theme == "light") {
+    			if (plugin.prefs.theme == "light" || plugin.prefs.theme == "auto") {
     				$$invalidate(6, theme = "white");
     			} else if (plugin.prefs.theme == "dark") {
     				$$invalidate(6, theme = "g100");

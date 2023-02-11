@@ -20,7 +20,7 @@
 
 async function initwidget() {
   await addPersons();
-  if (plugin.prefs.theme == "light"){
+  if (plugin.prefs.theme == "light" || plugin.prefs.theme == "auto"){
     bgcolor = "white"
   }
   else {bgcolor = "black"}
