@@ -45,6 +45,7 @@
     for (var keyword of widget.config.wckeywords) {
       keywordstring = keywordstring +keyword+",";
     }
+    keywordstring = keywordstring.slice(0, -1);
     return keywordstring;
   }
 
