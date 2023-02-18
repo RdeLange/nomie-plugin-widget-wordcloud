@@ -180,6 +180,11 @@ const updatewidget = () => {
     isEditMode = false;
 };
 
+const backtolastsave = () => {
+  WidgetsEdit = Widgets;
+  view="main";
+  isEditMode = false;
+}
 
 
  onMount(async () => {
@@ -210,7 +215,7 @@ const updatewidget = () => {
 {:else if view == "settings"}
 <Settings pluginname={pluginname} pluginemoji={pluginemoji} on:exitsettings={showMain} on:savesettings={saveSettings}/>
 {:else if view == "mainedit"}
-<Edit pluginname={pluginname} pluginemoji={pluginemoji} bind:widget={WidgetsEdit[widget2edit]} bind:theme={theme} on:updatewidget={updatewidget} on:exitedit={()=>{view="main"; isEditMode=false;}} ></Edit>
+<Edit pluginname={pluginname} pluginemoji={pluginemoji} bind:widget={WidgetsEdit[widget2edit]} bind:theme={theme} on:updatewidget={updatewidget} on:exitedit={backtolastsave} ></Edit>
 {/if}
 {:else if mode == "widget"}
 <Widget bind:Widgets={Widgets} bind:WidgetIndex={WidgetIndex} plugin={plugin}></Widget>
