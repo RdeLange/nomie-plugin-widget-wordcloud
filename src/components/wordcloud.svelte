@@ -3,6 +3,7 @@
   
   export let words = [{ text: "Nomie", count: 100 },{ text: "Test", count: 50 },{ text: "RdL", count: 75 }];
   export let wctheme = "none";
+  export let plugin;
 
 
   let wcwords = [{ text: "Loading", size: 9 }];
@@ -45,7 +46,8 @@
     //Interact.alert("Coming Soon","You will soon be able to directly go to the Connection");
     let item= word.text.toLowerCase();
     if (wctheme == "persons"){
-     //Interact.person(item);
+      let note2nomie = "@"+item;+" ";
+      plugin.openNoteEditor(note2nomie);
     }
      if (wctheme == "journals"){
      //Interact.journal(item);
@@ -142,7 +144,7 @@ ul.cloud a:hover::before {
   <div>
     <ul class="cloud" role="navigation" aria-label="Webdev word cloud">
       {#each wcwords as wcword, index (index)}
-      <li on:click={() => {
+      <li style="cursor:pointer" on:click={() => {
         wordclicked(wcword); 
       }}><a href="#" data-weight={wcword.size}>{wcword.text}</a></li>
       {/each} 

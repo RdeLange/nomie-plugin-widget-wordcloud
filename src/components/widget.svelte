@@ -156,7 +156,7 @@ onMount(
  		<div class="inner-wrapper" style="background:{bgcolor}">
 			<div class="content" style="background:{bgcolor}">
         <Wordcloud
-        bind:words={wcwords} bind:wctheme={wctheme}/>
+        bind:words={wcwords} bind:wctheme={wctheme} plugin={plugin}/>
         </div>
 		</div>
 	</div>
