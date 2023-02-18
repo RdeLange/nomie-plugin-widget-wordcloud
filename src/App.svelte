@@ -38,6 +38,12 @@
   let amountofcards = 0;
   let widget2edit = 0;
   let isEditMode = false;
+  let lastname = "";
+  let lastdescription = "";
+  let lastcolor = "";
+  let lastemoji = "";
+  let  lastkeywords = [];
+  let lastrange = "";
   
   const plugin = new NomiePlugin({
         name: pluginname,
@@ -168,6 +174,12 @@ const editMode = (event) => {
 		//find widgetindex by id
 		const findwidgetindex = (element) => element.widgetid == widgetId;
     widget2edit = Widgets.findIndex(findwidgetindex);
+    lastname = Widgets[widget2edit].name;
+    lastdescription = Widgets[widget2edit].description;
+    lastcolor = Widgets[widget2edit].color;
+    lastemoji = Widgets[widget2edit].emoji;
+    lastkeywords = Widgets[widget2edit].config.wckeywords;
+    lastrange = Widgets[widget2edit].config.wctimerange;
     isEditMode = true;
     view="mainedit";
 }
@@ -181,7 +193,8 @@ const updatewidget = () => {
 };
 
 const backtolastsave = () => {
-  WidgetsEdit = Widgets;
+  const lastsave = {"widgetid":Widgets[widget2edit].widgetid,"name":lastname,"description":lastdescription,"color":lastcolor,"emoji":lastemoji,"config":{"wctheme":"custom","wctimerange":lastrange,"wckeywords":lastkeywords}}
+  WidgetsEdit[widget2edit]=lastsave;
   view="main";
   isEditMode = false;
 }
